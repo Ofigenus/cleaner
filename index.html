@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header class="main-header">
         <div class="container">
@@ -15,19 +17,32 @@
                     <img src="img/Union.webp" alt="">
                 </div>
                 <div class="slider-btn">
-                    <input id="toggle-home" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
-<label for="toggle-on" class="btn">Yes</label>
-<input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio">
-<label for="toggle-off" class="btn">No</label>
+                    <input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
+                    <label for="toggle-on" class="btn">Дом</label>
+                    <input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio">
+                    <label for="toggle-off" class="btn">Офис</label>
                 </div>
                 <div class="main-menu">
-
+                    <nav class="main-navigation">
+                        <ul class="main-list">
+                            <li><a href="#">После ремонта</a></li>
+                            <li><a href="#">Генеральная уборка</a></li>
+                            <li><a href="#">Регулярная уборка</a></li>
+                            <li><a href="#">Мойка окон</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 <div class="header-contacts">
-
+                    <div class="row">
+                        <a href="tel:+380674016977">+380 67 401 69 77</a>
+                        <p>24/7</p>
+                    </div>
                 </div>
                 <div class="hamburger">
-
+                    <a id="hamburger-icon" href="#" title="Menu">
+                        <span class="line line-1"></span>
+                        <span class="line line-2"></span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -35,12 +50,25 @@
 
     <main>
         <section class="main-slider">
-            <img src="img/Rectangle 47.webp" alt="room">
+            <div id="slide-room">
+                <div class="row">
+                    <div class="room-img">
+                        <img src="img/Rectangle 47.webp" alt="room">
+                    </div>
+                    <div class="room-text">
+                        <h1>Уборка квартир в Киеве </h1>
+                        <p>Мы уберем у вас дома или в офисе. Наведем чистоту после ремонта и проведем генеральную
+                            уборку. </p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
 
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="/js/main.js"></script>
+
 </html>

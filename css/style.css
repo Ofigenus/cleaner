@@ -35,15 +35,24 @@
 }
 .container {
   max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-body, main {
+body,
+main,
+a {
   font-family: "travels";
   margin: 0;
   padding: 0;
@@ -51,8 +60,167 @@ body, main {
   color: #404040;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 76px;
+  line-height: 110%;
+  color: #404040;
+  font-weight: 400;
+  margin: 30px 0;
+}
+
 .main-header {
   position: absolute;
   z-index: 10;
-  padding: 22px 54px;
+  padding: 22px 0;
+  width: 100%;
+}
+
+.main-logo {
+  padding-left: 44px;
+  padding-right: 25px;
+}
+
+.slider-btn {
+  position: relative;
+}
+.slider-btn:after {
+  content: " ";
+  width: 105%;
+  height: 100%;
+  background-color: #fff;
+  display: inline-block;
+  position: absolute;
+  left: -3px;
+  z-index: -2;
+  border-radius: 34px;
+}
+.slider-btn .btn {
+  border: none;
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  -webkit-transition: background 600ms ease, color 600ms ease;
+  transition: background 600ms ease, color 600ms ease;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 15px;
+}
+.slider-btn input[type=radio].toggle {
+  display: none;
+}
+.slider-btn input[type=radio].toggle + label {
+  cursor: pointer;
+  width: 40px;
+}
+.slider-btn input[type=radio].toggle + label:hover {
+  background: none;
+}
+.slider-btn input[type=radio].toggle + label:after {
+  background: #5A30F0;
+  content: "";
+  height: 90%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  -webkit-transition: left 200ms cubic-bezier(0.77, 0, 0.175, 1);
+  transition: left 200ms cubic-bezier(0.77, 0, 0.175, 1);
+  width: 100%;
+  z-index: -1;
+  border-radius: 34px;
+}
+.slider-btn input[type=radio].toggle.toggle-left + label {
+  border-right: 0;
+}
+.slider-btn input[type=radio].toggle.toggle-left + label:after {
+  left: 100%;
+}
+.slider-btn input[type=radio].toggle.toggle-right + label {
+  margin-left: -5px;
+}
+.slider-btn input[type=radio].toggle.toggle-right + label:after {
+  left: -100%;
+}
+.slider-btn input[type=radio].toggle:checked + label {
+  cursor: default;
+  color: #fff;
+  -webkit-transition: color 200ms;
+  transition: color 200ms;
+}
+.slider-btn input[type=radio].toggle:checked + label:after {
+  left: 0;
+}
+
+.main-menu .main-navigation .main-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 43px;
+}
+.main-menu .main-navigation .main-list a {
+  font-weight: 500;
+  padding: 0 16px;
+  font-size: 16px;
+}
+
+.header-contacts {
+  margin-left: 51px;
+  margin-right: 38px;
+}
+.header-contacts a {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0.2px;
+}
+.header-contacts a::after {
+  content: " ";
+  width: 1.5px;
+  height: 14px;
+  background-color: #404040;
+  display: inline-block;
+  margin: 0 15px;
+}
+.header-contacts p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#hamburger-icon {
+  width: 20px;
+  height: 10px;
+  position: relative;
+  display: block;
+}
+#hamburger-icon .line {
+  display: block;
+  background: #404040;
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+}
+#hamburger-icon .line.line-1 {
+  top: 0;
+}
+#hamburger-icon .line.line-2 {
+  top: 50%;
+}
+
+.main-slider .room-text {
+  max-width: 380px;
+  padding-left: 155px;
+}
+.main-slider .room-text p {
+  font-size: 18px;
+  line-height: 140%;
 }
