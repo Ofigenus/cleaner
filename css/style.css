@@ -34,7 +34,7 @@
   font-stretch: normal;
 }
 .container {
-  max-width: 1440px;
+  max-width: 1350px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -50,9 +50,18 @@
       flex-wrap: wrap;
 }
 
+.justify {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
 body,
 main,
-a {
+a, p {
   font-family: "travels";
   margin: 0;
   padding: 0;
@@ -74,6 +83,10 @@ h1 {
   color: #404040;
   font-weight: 400;
   margin: 30px 0;
+}
+
+.main-slider, #advantages {
+  padding-bottom: 73px;
 }
 
 .main-header {
@@ -163,7 +176,7 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 43px;
+  margin-left: 5px;
 }
 .main-menu .main-navigation .main-list a {
   font-weight: 500;
@@ -223,4 +236,35 @@ h1 {
 .main-slider .room-text p {
   font-size: 18px;
   line-height: 140%;
+}
+
+.main-slider {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+#advantages .adv-item {
+  max-width: 300px;
+}
+#advantages .adv-item .adv-content {
+  position: relative;
+  background-color: #F3F6FB;
+  height: 100%;
+  text-align: center;
+}
+#advantages .adv-item .adv-content p {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 130%;
+  text-align: center;
+  padding: 20px 40px 52px 40px;
+}
+#advantages .adv-item .adv-content .adv-img {
+  height: 151px;
+}
+#advantages .adv-item .adv-content img {
+  width: 151px;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 151px / 2);
 }

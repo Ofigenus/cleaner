@@ -2,7 +2,7 @@
 @import "_const";
 
 .container {
-    max-width: 1440px;
+    max-width: 1350px;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -13,9 +13,14 @@
     flex-wrap: wrap;
 }
 
+.justify {
+    justify-content: space-between;
+    align-items: stretch;
+}
+
 body,
 main,
-a {
+a, p {
     font-family: 'travels';
     margin: 0;
     padding: 0;
@@ -37,6 +42,10 @@ h1 {
     color: $color-main;
     font-weight: 400;
     margin: 30px 0;
+}
+
+.main-slider, #advantages {
+    padding-bottom: 73px;
 }
 
 //..........Header............
@@ -144,7 +153,7 @@ h1 {
     .main-navigation {
         .main-list {
             display: flex;
-            margin-left: 43px;
+            margin-left: 5px;
 
             a {
                 font-weight: 500;
@@ -222,4 +231,43 @@ h1 {
     }
    
 }
+.main-slider {
+    max-width: 1440px;
+    margin: 0 auto;
+}
 
+//..........Advantages............
+
+#advantages {
+    .adv-item{
+        max-width: 300px;
+
+        .adv-item {
+
+            
+        }
+
+        .adv-content{
+            position: relative;
+            background-color: $color-bg;
+            height: 100%;
+            text-align: center;
+            p {
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 130%;
+                text-align: center;
+                padding: 20px 40px 52px 40px;
+            }
+            .adv-img {
+                height: 151px;
+            }
+            img {
+                width: 151px;
+                position: absolute;
+                bottom: 0;
+                left: calc(50% - 151px / 2);
+            }
+        }
+    }
+}
