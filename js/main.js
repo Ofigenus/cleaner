@@ -1,3 +1,4 @@
+// animation onscroll
 
 const animeItems = document.querySelectorAll('.animate-item');
 
@@ -17,10 +18,6 @@ if (animeItems.length > 0) {
             }
             if ((pageYOffset > animeItemsOffset - animeTamePoint) && pageYOffset < (animeItemsOffset + animeItemsHeight)) {
                 animeItem.classList.add('active');
-            }else {
-                if (!animeItems.classList.contains('anime-none')) {
-                    animeItem.classList.remove('active');
-                }
             }
         }
     }
@@ -31,4 +28,25 @@ if (animeItems.length > 0) {
         return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
     }
     onScrollAnim();
-}
+};
+
+
+//header menu fixed
+
+var div = document.getElementById('header-fix');
+window.onscroll = function() {
+    if (window.pageYOffset > 95) {
+        div.classList.add('toolbar');
+    }
+    else if (window.pageYOffset < 95) {
+        div.classList.remove('toolbar');
+    }
+};
+
+let way = 100, // кол-во пройденных пикселей
+    deg = 10;  // угол поворота за пройденный путь
+  
+$(window).on('scroll', function(){
+  let s = $(this).scrollTop();
+  $('.btn-container').css('transform', 'rotate('+(s / way * deg)+'deg)');
+});

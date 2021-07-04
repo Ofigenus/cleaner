@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "travels";
   src: url("../fonts/TTTravels-Bold.ttf");
@@ -61,7 +62,8 @@
 
 body,
 main,
-a, p {
+a,
+p {
   font-family: "travels";
   margin: 0;
   padding: 0;
@@ -85,8 +87,22 @@ h1 {
   margin: 30px 0;
 }
 
-.main-slider, #advantages {
+h2 {
+  margin: 0;
+}
+
+.main-slider,
+#advantages {
   padding-bottom: 73px;
+}
+
+#how-we-clean {
+  padding-top: 75px;
+}
+
+main {
+  position: relative;
+  height: 100%;
 }
 
 .main-header {
@@ -97,8 +113,15 @@ h1 {
 }
 
 .main-logo {
-  padding-left: 44px;
+  padding-left: 8px;
   padding-right: 25px;
+}
+
+.toolbar {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.07);
+          box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.07);
+  position: fixed;
 }
 
 .slider-btn {
@@ -108,7 +131,7 @@ h1 {
   content: " ";
   width: 105%;
   height: 100%;
-  background-color: #fff;
+  background-color: #F3F6FB;
   display: inline-block;
   position: absolute;
   left: -3px;
@@ -176,7 +199,7 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 5px;
+  margin-left: 43px;
 }
 .main-menu .main-navigation .main-list a {
   font-weight: 500;
@@ -251,20 +274,212 @@ h1 {
   background-color: #F3F6FB;
   height: 100%;
   text-align: center;
+  border-radius: 8px;
+  min-height: 316px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
-#advantages .adv-item .adv-content p {
+#advantages .adv-item .adv-content .advantages-content-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#advantages .adv-item .adv-content .advantages-content-block p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #fff;
+  text-align: left;
+  padding: 30px;
+}
+#advantages .adv-item .adv-content:hover {
+  background-color: #5A30F0;
+}
+#advantages .adv-item .adv-content:hover .advantages-content-block {
+  opacity: 1;
+}
+#advantages .adv-item .adv-content:hover .adv-img img {
+  opacity: 0;
+}
+#advantages .adv-item .adv-content:hover .adv-title {
+  opacity: 0;
+}
+#advantages .adv-item .adv-content .adv-title {
   font-size: 24px;
   font-weight: 500;
   line-height: 130%;
   text-align: center;
   padding: 20px 40px 52px 40px;
+  opacity: 1;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 #advantages .adv-item .adv-content .adv-img {
-  height: 151px;
-}
-#advantages .adv-item .adv-content img {
-  width: 151px;
   position: absolute;
   bottom: 0;
-  left: calc(50% - 151px / 2);
+  left: 0;
+  width: 100%;
+}
+#advantages .adv-item .adv-content img {
+  position: absolute;
+  bottom: 0;
+  opacity: 1;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#advantages .adv-item .adv-content .img-adv-1 {
+  margin-left: -75.5px;
+  width: 151px;
+}
+#advantages .adv-item .adv-content .img-adv-2 {
+  margin-left: -94px;
+  width: 188px;
+}
+#advantages .adv-item .adv-content .img-adv-3 {
+  margin-left: -105.5px;
+  width: 211px;
+}
+#advantages .adv-item .adv-content .img-adv-4 {
+  margin-left: -100.5px;
+  width: 201px;
+}
+
+#how-we-clean {
+  position: relative;
+}
+#how-we-clean .left-navigation {
+  height: 100vh;
+  width: 375px;
+  background: #5A30F0;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+  -webkit-transform: translate(-120%, 0px);
+          transform: translate(-120%, 0px);
+  position: absolute;
+}
+#how-we-clean .left-navigation .header-menu-left p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: #fff;
+  padding: 35px 53px;
+}
+#how-we-clean .left-navigation .menu-left {
+  padding: 256px 0 0 60px;
+}
+#how-we-clean .left-navigation .menu-left .menu-left-item {
+  padding-bottom: 22px;
+  position: relative;
+  cursor: pointer;
+}
+#how-we-clean .left-navigation .menu-left .menu-left-item .classic,
+#how-we-clean .left-navigation .menu-left .menu-left-item .italic {
+  font-size: 44px;
+  line-height: 120%;
+  color: #fff;
+  opacity: 0.7;
+  font-style: normal;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+#how-we-clean .left-navigation .menu-left .menu-left-item .italic {
+  opacity: 0;
+  font-style: italic;
+  position: absolute;
+  left: 0;
+}
+#how-we-clean .left-navigation .menu-left .menu-left-item:hover .classic {
+  opacity: 0;
+}
+#how-we-clean .left-navigation .menu-left .menu-left-item:hover .italic {
+  opacity: 1;
+}
+#how-we-clean .left-navigation .menu-left .item-active .classic {
+  opacity: 0;
+}
+#how-we-clean .left-navigation .menu-left .item-active .italic {
+  opacity: 1 !important;
+  font-style: italic;
+}
+#how-we-clean .left-navigation .menu-left .item-active .italic::before {
+  content: "→";
+  font-size: 44px;
+  line-height: 120%;
+  color: #fff;
+  display: inline-block;
+  padding-right: 10px;
+}
+#how-we-clean .container-for-clean {
+  max-width: 1094px;
+  margin: 0 auto;
+}
+#how-we-clean #content-how-clean .head-text {
+  padding-bottom: 52px;
+}
+#how-we-clean #content-how-clean .head-text .row {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+#how-we-clean #content-how-clean .head-text .about-clean {
+  max-width: 414px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 140%;
+}
+#how-we-clean #content-how-clean .head-text h2 {
+  font-size: 44px;
+  line-height: 120%;
+  font-weight: normal;
+}
+#how-we-clean #content-how-clean .how-we-clean-img img {
+  max-width: 100%;
+}
+
+#btn-order-clean {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+}
+#btn-order-clean .btn-container {
+  display: block;
+  margin: 0 auto;
+  width: 195px;
+  height: 195px;
+  background: #5A30F0;
+  border-radius: 50%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+#btn-order-clean .btn-container span {
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  max-width: 163px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  line-height: 130%;
 }

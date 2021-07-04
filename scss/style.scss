@@ -20,7 +20,8 @@
 
 body,
 main,
-a, p {
+a,
+p {
     font-family: 'travels';
     margin: 0;
     padding: 0;
@@ -44,11 +45,26 @@ h1 {
     margin: 30px 0;
 }
 
-.main-slider, #advantages {
+h2 {
+    margin: 0;
+}
+
+.main-slider,
+#advantages {
     padding-bottom: 73px;
 }
 
+#how-we-clean {
+    padding-top: 75px;
+}
+
+main {
+    position: relative;
+    height: 100%;
+}
+
 //..........Header............
+
 
 .main-header {
     position: absolute;
@@ -59,8 +75,14 @@ h1 {
 }
 
 .main-logo {
-    padding-left: 44px;
+    padding-left: 8px;
     padding-right: 25px;
+}
+
+.toolbar {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.07);
+    position: fixed;
 }
 
 //Btn header
@@ -72,7 +94,7 @@ h1 {
         content: " ";
         width: 105%;
         height: 100%;
-        background-color: #fff;
+        background-color: $color-bg;
         display: inline-block;
         position: absolute;
         left: -3px;
@@ -137,7 +159,7 @@ h1 {
 
         &:checked+label {
             cursor: default;
-            color: #fff;
+            color: $color-white;
             transition: color 200ms;
 
             &:after {
@@ -153,7 +175,7 @@ h1 {
     .main-navigation {
         .main-list {
             display: flex;
-            margin-left: 5px;
+            margin-left: 43px;
 
             a {
                 font-weight: 500;
@@ -229,8 +251,9 @@ h1 {
             line-height: 140%;
         }
     }
-   
+
 }
+
 .main-slider {
     max-width: 1440px;
     margin: 0 auto;
@@ -239,35 +262,248 @@ h1 {
 //..........Advantages............
 
 #advantages {
-    .adv-item{
+    .adv-item {
         max-width: 300px;
 
-        .adv-item {
 
-            
-        }
-
-        .adv-content{
+        .adv-content {
             position: relative;
             background-color: $color-bg;
             height: 100%;
             text-align: center;
-            p {
+            border-radius: 8px;
+            min-height: 316px;
+            transition: all 0.5s ease;
+
+            .advantages-content-block {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                opacity: 0;
+                transition: all 0.5s ease;
+
+                p {
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 140%;
+                    color: $color-white;
+                    text-align: left;
+                    padding: 30px;
+                }
+            }
+
+            &:hover {
+                background-color: $color-purple;
+
+                .advantages-content-block {
+                    opacity: 1;
+                }
+
+                .adv-img img {
+                    opacity: 0;
+                }
+
+                .adv-title {
+                    opacity: 0;
+                }
+            }
+
+            .adv-title {
                 font-size: 24px;
                 font-weight: 500;
                 line-height: 130%;
                 text-align: center;
                 padding: 20px 40px 52px 40px;
+                opacity: 1;
+                transition: all 0.3s ease;
             }
+
             .adv-img {
-                height: 151px;
-            }
-            img {
-                width: 151px;
                 position: absolute;
                 bottom: 0;
-                left: calc(50% - 151px / 2);
+                left: 0;
+                width: 100%;
+
             }
+
+            img {
+
+                position: absolute;
+                bottom: 0;
+                opacity: 1;
+                transition: all 0.3s ease;
+            }
+
+            .img-adv-1 {
+                @include absolute-width(151px);
+            }
+
+            .img-adv-2 {
+                @include absolute-width(188px);
+            }
+
+            .img-adv-3 {
+                @include absolute-width(211px);
+            }
+
+            .img-adv-4 {
+                @include absolute-width(201px);
+            }
+        }
+    }
+}
+
+//..........How-we-clean............
+
+#how-we-clean {
+    position: relative;
+
+    .left-navigation {
+        height: 100vh;
+        width: 375px;
+        background: #5A30F0;
+        transition: all 0.8s ease 0s;
+        transform: translate(-120%, 0px);
+        position: absolute;
+
+
+        .header-menu-left p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 130%;
+            color: $color-white;
+            padding: 35px 53px;
+        }
+
+        .menu-left {
+            padding: 256px 0 0 60px;
+
+            .menu-left-item {
+                padding-bottom: 22px;
+                position: relative;
+                cursor: pointer;
+
+                .classic,
+                .italic {
+                    font-size: 44px;
+                    line-height: 120%;
+                    color: $color-white;
+                    opacity: 0.7;
+                    font-style: normal;
+                    transition: 0.3s ease;
+                }
+
+                .italic {
+                    opacity: 0;
+                    font-style: italic;
+                    position: absolute;
+                    left: 0;
+                }
+
+                &:hover {
+                    .classic {
+                        opacity: 0;
+                    }
+
+                    .italic {
+                        opacity: 1;
+                    }
+
+                }
+            }
+
+            .item-active {
+                .classic {
+                    opacity: 0;
+                }
+
+                .italic {
+                    opacity: 1 !important;
+                    font-style: italic;
+
+                    &::before {
+                        content: "→";
+                        font-size: 44px;
+                        line-height: 120%;
+                        color: $color-white;
+                        display: inline-block;
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .container-for-clean {
+        max-width: 1094px;
+        margin: 0 auto;
+    }
+
+    #content-how-clean {
+        .head-text {
+            padding-bottom: 52px;
+
+            .row {
+                justify-content: space-between;
+                align-items: baseline;
+            }
+
+            .about-clean {
+                max-width: 414px;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 140%;
+            }
+
+            h2 {
+                font-size: 44px;
+                line-height: 120%;
+                font-weight: normal;
+            }
+        }
+
+        .how-we-clean-img {
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+//..........Btn order............
+
+#btn-order-clean {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    
+
+    .btn-container {
+        display: block;
+        margin: 0 auto;
+        width: 195px;
+        height: 195px;
+        background: $color-purple;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        transform: rotate(-15deg);
+
+        span {
+            color: $color-white;
+            font-weight: 500;
+            font-size: 18px;
+            max-width: 163px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            width: 100%;
+            height: 100%;
+            line-height: 130%;
         }
     }
 }
