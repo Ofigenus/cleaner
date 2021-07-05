@@ -359,29 +359,33 @@ main {
         &.active-anim .adv-item {
             opacity: 1;
             transform: translate(0px, 0px);
+
             &:nth-child(1) {
-                transition: all 0.8s ease 0s; 
+                transition: all 0.8s ease 0s;
             }
+
             &:nth-child(2) {
-                transition: all 0.8s ease 0.2s; 
+                transition: all 0.8s ease 0.2s;
             }
+
             &:nth-child(3) {
-                transition: all 0.8s ease 0.4s; 
+                transition: all 0.8s ease 0.4s;
             }
+
             &:nth-child(4) {
-                transition: all 0.8s ease 0.6s; 
+                transition: all 0.8s ease 0.6s;
             }
 
         }
 
-    
-    .adv-item {
-        overflow: hidden;
-        opacity: 0;
-        transform: translate(0px, 120%);
-        transition: all 0.3s ease 0s;
+
+        .adv-item {
+            overflow: hidden;
+            opacity: 0;
+            transform: translate(0px, 120%);
+            transition: all 0.3s ease 0s;
+        }
     }
-}
 
 }
 
@@ -474,6 +478,7 @@ main {
     #content-how-clean {
         .head-text {
             padding-bottom: 52px;
+            transition: all 0.8s ease 0s;
 
             .row {
                 justify-content: space-between;
@@ -500,11 +505,25 @@ main {
             }
         }
     }
+
+    &.animate-footer.active-anim {
+      
+        .left-navigation {
+            transform: translate(0px, 0px);
+        }
+
+        .head-text {
+            transform: translate(0px, -120%);
+            position: absolute;
+            width: 1094px;
+        }
+        .how-we-clean-img {
+            padding-top: 173px;
+        }
+    }
 }
 
-.animate-footer.animate-item {
 
-}
 
 //..........Btn order............
 
@@ -513,7 +532,7 @@ main {
     bottom: 10px;
     width: 100%;
     transition: all 0.3s ease 0s;
-    
+
 
     .btn-container {
         display: block;
@@ -543,6 +562,7 @@ main {
             line-height: 130%;
         }
     }
+
     .btn-scale {
         width: 175px;
         height: 175px;

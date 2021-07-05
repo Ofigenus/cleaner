@@ -23,25 +23,25 @@ if (animeItems.length > 0) {
                 if ((pageYOffset > animeItemsOffset - animeTamePoint) && pageYOffset < (animeItemsOffset + animeItemsHeight)) {
                     animeItem.classList.add('active-anim');
                 } else {
-                    if (!animeItem.classList.contains('no-anim')){
-                    animeItem.classList.remove('active-anim');
+                    if (!animeItem.classList.contains('no-anim')) {
+                        animeItem.classList.remove('active-anim');
                     }
-                }  
+                }
             }
 
             if (!animeItem.classList.contains('animate-footer')) {
-            let animeTamePoint = window.innerHeight - animeItemsHeight / animeStart;
-            if (animeItemsHeight > window.innerHeight) {
-                animeTamePoint = window.innerHeight - window.innerHeight / animeStart;
-            }
-            if ((pageYOffset > animeItemsOffset - animeTamePoint) && pageYOffset < (animeItemsOffset + animeItemsHeight)) {
-                animeItem.classList.add('active-anim');
-            } else {
-                if (!animeItem.classList.contains('no-anim')){
-                animeItem.classList.remove('active-anim');
+                let animeTamePoint = window.innerHeight - animeItemsHeight / animeStart;
+                if (animeItemsHeight > window.innerHeight) {
+                    animeTamePoint = window.innerHeight - window.innerHeight / animeStart;
+                }
+                if ((pageYOffset > animeItemsOffset - animeTamePoint) && pageYOffset < (animeItemsOffset + animeItemsHeight)) {
+                    animeItem.classList.add('active-anim');
+                } else {
+                    if (!animeItem.classList.contains('no-anim')) {
+                        animeItem.classList.remove('active-anim');
+                    }
                 }
             }
-        }
         }
     }
 
@@ -80,7 +80,7 @@ $(window).on('scroll', function () {
 
     let s = $(this).scrollTop();
     $('.rotate-icon').css('transform', 'rotate(' + (s / way * deg) + 'deg)');
-    
+
 
     if (s > 10) {
 
@@ -110,6 +110,7 @@ $(window).on('scroll', function () {
 
     if ($('#how-we-clean').hasClass('animate-footer') && $('#how-we-clean').hasClass('active-anim')) {
         $('#btn-order-clean').css('transform', 'scale(0)');
+        $('#header-fix').removeClass('toolbar');
     } else {
         $('#btn-order-clean').css('transform', 'scale(1)');
     }
