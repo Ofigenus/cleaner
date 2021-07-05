@@ -176,6 +176,8 @@ main {
         .main-list {
             display: flex;
             margin-left: 43px;
+            margin-top: 0;
+            margin-bottom: 0;
 
             a {
                 font-weight: 500;
@@ -352,6 +354,35 @@ main {
             }
         }
     }
+
+    .animate-item {
+        &.active-anim .adv-item {
+            opacity: 1;
+            transform: translate(0px, 0px);
+            &:nth-child(1) {
+                transition: all 0.8s ease 0s; 
+            }
+            &:nth-child(2) {
+                transition: all 0.8s ease 0.2s; 
+            }
+            &:nth-child(3) {
+                transition: all 0.8s ease 0.4s; 
+            }
+            &:nth-child(4) {
+                transition: all 0.8s ease 0.6s; 
+            }
+
+        }
+
+    
+    .adv-item {
+        overflow: hidden;
+        opacity: 0;
+        transform: translate(0px, 120%);
+        transition: all 0.3s ease 0s;
+    }
+}
+
 }
 
 //..........How-we-clean............
@@ -471,12 +502,17 @@ main {
     }
 }
 
+.animate-footer.animate-item {
+
+}
+
 //..........Btn order............
 
 #btn-order-clean {
     position: fixed;
     bottom: 10px;
     width: 100%;
+    transition: all 0.3s ease 0s;
     
 
     .btn-container {
@@ -489,6 +525,7 @@ main {
         position: relative;
         display: flex;
         justify-content: center;
+        transition: all 0.3s ease 0s;
         transform: rotate(-15deg);
 
         span {
@@ -505,5 +542,9 @@ main {
             height: 100%;
             line-height: 130%;
         }
+    }
+    .btn-scale {
+        width: 175px;
+        height: 175px;
     }
 }

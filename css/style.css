@@ -200,6 +200,8 @@ main {
   display: -ms-flexbox;
   display: flex;
   margin-left: 43px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .main-menu .main-navigation .main-list a {
   font-weight: 500;
@@ -347,6 +349,35 @@ main {
   margin-left: -100.5px;
   width: 201px;
 }
+#advantages .animate-item.active-anim .adv-item {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+#advantages .animate-item.active-anim .adv-item:nth-child(1) {
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+#advantages .animate-item.active-anim .adv-item:nth-child(2) {
+  -webkit-transition: all 0.8s ease 0.2s;
+  transition: all 0.8s ease 0.2s;
+}
+#advantages .animate-item.active-anim .adv-item:nth-child(3) {
+  -webkit-transition: all 0.8s ease 0.4s;
+  transition: all 0.8s ease 0.4s;
+}
+#advantages .animate-item.active-anim .adv-item:nth-child(4) {
+  -webkit-transition: all 0.8s ease 0.6s;
+  transition: all 0.8s ease 0.6s;
+}
+#advantages .animate-item .adv-item {
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
 
 #how-we-clean {
   position: relative;
@@ -447,6 +478,8 @@ main {
   position: fixed;
   bottom: 10px;
   width: 100%;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 #btn-order-clean .btn-container {
   display: block;
@@ -462,6 +495,8 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
 }
@@ -482,4 +517,8 @@ main {
   width: 100%;
   height: 100%;
   line-height: 130%;
+}
+#btn-order-clean .btn-scale {
+  width: 175px;
+  height: 175px;
 }
