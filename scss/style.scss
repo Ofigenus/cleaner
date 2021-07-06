@@ -473,22 +473,22 @@ main {
         }
     }
 
-    .container-for-clean, .head-text {
-        max-width: 1094px;
-        margin: 0 auto;
-    }
+    
 
     #content-how-clean {
         position: relative;
-        padding-top: 173px;
-        padding-bottom: 125px;
+        overflow: hidden;
+        height: 100vh;
 
         .head-text {
-            position: absolute;
-            transition: all 0.8s ease 0s;
+
             width: 100%;
             top: 0;
             left: 0;
+            max-width: 1094px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+            transition: all 0.8s ease 0s;
 
             .row {
                 justify-content: space-between;
@@ -511,8 +511,14 @@ main {
 
         .how-we-clean-img {
             img {
-                max-width: 100%;
+                max-width: 1094px;
+                margin: 0 auto;
+                display: block;
+                height: 100%;
+                position: relative;
+                transition: all 0.8s ease 0s;
             }
+            
         }
     }
 
@@ -524,6 +530,15 @@ main {
 
         .head-text {
             transform: translate(0px, -200%);
+        }
+
+        .how-we-clean-img {
+            img {
+                height: 100vh !important;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
         }
         
     }

@@ -447,22 +447,20 @@ main {
   display: inline-block;
   padding-right: 10px;
 }
-#how-we-clean .container-for-clean, #how-we-clean .head-text {
-  max-width: 1094px;
-  margin: 0 auto;
-}
 #how-we-clean #content-how-clean {
   position: relative;
-  padding-top: 173px;
-  padding-bottom: 125px;
+  overflow: hidden;
+  height: 100vh;
 }
 #how-we-clean #content-how-clean .head-text {
-  position: absolute;
-  -webkit-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
   width: 100%;
   top: 0;
   left: 0;
+  max-width: 1094px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 #how-we-clean #content-how-clean .head-text .row {
   -webkit-box-pack: justify;
@@ -484,7 +482,13 @@ main {
   font-weight: normal;
 }
 #how-we-clean #content-how-clean .how-we-clean-img img {
-  max-width: 100%;
+  max-width: 1094px;
+  margin: 0 auto;
+  display: block;
+  height: 100%;
+  position: relative;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 #how-we-clean.animate-footer.active-anim .left-navigation {
   -webkit-transform: translate(0px, 0px);
@@ -493,6 +497,12 @@ main {
 #how-we-clean.animate-footer.active-anim .head-text {
   -webkit-transform: translate(0px, -200%);
           transform: translate(0px, -200%);
+}
+#how-we-clean.animate-footer.active-anim .how-we-clean-img img {
+  height: 100vh !important;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 #btn-order-clean {
