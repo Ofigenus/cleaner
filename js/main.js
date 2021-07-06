@@ -50,15 +50,6 @@ $(window).on('scroll', function () {
     }
     if (window.pageYOffset < 95 || $('#how-we-clean').hasClass('animate-footer') && $('#how-we-clean').hasClass('active-anim')) {
         div.removeClass('toolbar');
-
-        jQuery(function() {
-            $( "#img-clean" ).animate({
-              height: "70vh",
-              position: 'absolute',
-                top: "0",
-                right: "0",
-            }, 1500 );
-          });
     }
 
 });
@@ -104,7 +95,14 @@ $(window).on('scroll', function () {
      } else {
          $('#btn-order-clean').css('transform', 'scale(1)');
      }
+
 });
 
+$(window).on('scroll', function () {
+if ($('#how-we-clean').hasClass('animate-footer') && $('#how-we-clean').hasClass('active-anim')) {
 
- 
+        $( "#img-clean" ).animate({
+          //height: "100%"
+        });
+}
+});

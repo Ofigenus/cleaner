@@ -398,7 +398,7 @@ main {
         height: 100vh;
         width: 375px;
         background: #5A30F0;
-        transition: all 0.8s ease 0s;
+        transition: all 1s ease 0s;
         transform: translate(-120%, 0px);
         position: fixed;
         left: 0;
@@ -477,8 +477,8 @@ main {
 
     #content-how-clean {
         position: relative;
-        overflow: hidden;
-        height: 100vh;
+        // overflow: hidden;
+        height: calc(100vh - 122px);
 
         .head-text {
 
@@ -487,8 +487,8 @@ main {
             left: 0;
             max-width: 1094px;
             margin: 0 auto;
-            padding-bottom: 50px;
-            transition: all 0.8s ease 0s;
+            padding-bottom: 100px;
+            transition: all 1s ease 0s;
 
             .row {
                 justify-content: space-between;
@@ -514,9 +514,12 @@ main {
                 max-width: 1094px;
                 margin: 0 auto;
                 display: block;
-                height: 100%;
-                position: relative;
-                transition: all 0.8s ease 0s;
+                position: absolute;
+                bottom: 0px;
+                left: calc(50% - 1094px / 2);
+                //right: calc(50% - 1094px / 2);
+                transition: all 1s ease 0s;
+        
             }
             
         }
@@ -534,10 +537,11 @@ main {
 
         .how-we-clean-img {
             img {
-                height: 100vh !important;
-                position: absolute;
-                top: 0;
-                right: 0;
+                //top: 0 !important;
+                left: 365px !important;
+                position: fixed !important;
+                max-width: 100% !important;
+                max-height: 100% !important;
             }
         }
         

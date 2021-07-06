@@ -386,8 +386,8 @@ main {
   height: 100vh;
   width: 375px;
   background: #5A30F0;
-  -webkit-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
   -webkit-transform: translate(-120%, 0px);
           transform: translate(-120%, 0px);
   position: fixed;
@@ -449,8 +449,7 @@ main {
 }
 #how-we-clean #content-how-clean {
   position: relative;
-  overflow: hidden;
-  height: 100vh;
+  height: calc(100vh - 122px);
 }
 #how-we-clean #content-how-clean .head-text {
   width: 100%;
@@ -458,9 +457,9 @@ main {
   left: 0;
   max-width: 1094px;
   margin: 0 auto;
-  padding-bottom: 50px;
-  -webkit-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
+  padding-bottom: 100px;
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
 }
 #how-we-clean #content-how-clean .head-text .row {
   -webkit-box-pack: justify;
@@ -485,10 +484,11 @@ main {
   max-width: 1094px;
   margin: 0 auto;
   display: block;
-  height: 100%;
-  position: relative;
-  -webkit-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% - 1094px / 2);
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
 }
 #how-we-clean.animate-footer.active-anim .left-navigation {
   -webkit-transform: translate(0px, 0px);
@@ -499,10 +499,10 @@ main {
           transform: translate(0px, -200%);
 }
 #how-we-clean.animate-footer.active-anim .how-we-clean-img img {
-  height: 100vh !important;
-  position: absolute;
-  top: 0;
-  right: 0;
+  left: 365px !important;
+  position: fixed !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
 }
 
 #btn-order-clean {
