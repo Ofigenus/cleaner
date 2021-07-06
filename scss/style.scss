@@ -400,7 +400,10 @@ main {
         background: #5A30F0;
         transition: all 0.8s ease 0s;
         transform: translate(-120%, 0px);
-        position: absolute;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 999;
 
 
         .header-menu-left p {
@@ -470,15 +473,22 @@ main {
         }
     }
 
-    .container-for-clean {
+    .container-for-clean, .head-text {
         max-width: 1094px;
         margin: 0 auto;
     }
 
     #content-how-clean {
+        position: relative;
+        padding-top: 173px;
+        padding-bottom: 125px;
+
         .head-text {
-            padding-bottom: 52px;
+            position: absolute;
             transition: all 0.8s ease 0s;
+            width: 100%;
+            top: 0;
+            left: 0;
 
             .row {
                 justify-content: space-between;
@@ -513,13 +523,9 @@ main {
         }
 
         .head-text {
-            transform: translate(0px, -120%);
-            position: absolute;
-            width: 1094px;
+            transform: translate(0px, -200%);
         }
-        .how-we-clean-img {
-            padding-top: 173px;
-        }
+        
     }
 }
 
@@ -567,4 +573,8 @@ main {
         width: 175px;
         height: 175px;
     }
+    
+}
+.transformScale{
+    transform: scale(0);
 }

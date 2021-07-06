@@ -390,7 +390,10 @@ main {
   transition: all 0.8s ease 0s;
   -webkit-transform: translate(-120%, 0px);
           transform: translate(-120%, 0px);
-  position: absolute;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
 }
 #how-we-clean .left-navigation .header-menu-left p {
   font-weight: 500;
@@ -444,14 +447,22 @@ main {
   display: inline-block;
   padding-right: 10px;
 }
-#how-we-clean .container-for-clean {
+#how-we-clean .container-for-clean, #how-we-clean .head-text {
   max-width: 1094px;
   margin: 0 auto;
 }
+#how-we-clean #content-how-clean {
+  position: relative;
+  padding-top: 173px;
+  padding-bottom: 125px;
+}
 #how-we-clean #content-how-clean .head-text {
-  padding-bottom: 52px;
+  position: absolute;
   -webkit-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 #how-we-clean #content-how-clean .head-text .row {
   -webkit-box-pack: justify;
@@ -480,13 +491,8 @@ main {
           transform: translate(0px, 0px);
 }
 #how-we-clean.animate-footer.active-anim .head-text {
-  -webkit-transform: translate(0px, -120%);
-          transform: translate(0px, -120%);
-  position: absolute;
-  width: 1094px;
-}
-#how-we-clean.animate-footer.active-anim .how-we-clean-img {
-  padding-top: 173px;
+  -webkit-transform: translate(0px, -200%);
+          transform: translate(0px, -200%);
 }
 
 #btn-order-clean {
@@ -536,4 +542,9 @@ main {
 #btn-order-clean .btn-scale {
   width: 175px;
   height: 175px;
+}
+
+.transformScale {
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
