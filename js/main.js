@@ -100,3 +100,15 @@ $(window).on('scroll', function () {
      }
 
 });
+
+
+
+// $('.st3').hover(function () {
+//     let plus = $('.st2');
+//     for (let index = 0; index < plus.length; index++) {
+//         let animePlus = plus[index];
+    
+//         $(animePlus).toggleClass('st2-hover');
+// console.log(animePlus);
+//     }
+// });
