@@ -10,7 +10,13 @@ if (animeItems.length > 0) {
             const animeItem = animeItems[index];
             const animeItemsHeight = animeItem.offsetHeight;
             const animeItemsOffset = offset(animeItem).top;
-            let animeStart = 1.1;
+            let animeStart;
+
+            if($(animeItem).hasClass('animate-footer')){
+                animeStart = 1.01;
+            } else {
+                animeStart = 4;
+            };
            
                 let animeTamePoint = window.innerHeight - animeItemsHeight / animeStart;
                 if (animeItemsHeight > window.innerHeight) {
@@ -34,10 +40,7 @@ if (animeItems.length > 0) {
             top: rect.top + scrollTop,
             left: rect.left + scrollLeft
         }
-    }
-
-    
-    
+    } 
 };
 
 //header menu fixed
@@ -96,13 +99,4 @@ $(window).on('scroll', function () {
          $('#btn-order-clean').css('transform', 'scale(1)');
      }
 
-});
-
-$(window).on('scroll', function () {
-if ($('#how-we-clean').hasClass('animate-footer') && $('#how-we-clean').hasClass('active-anim')) {
-
-        $( "#img-clean" ).animate({
-          //height: "100%"
-        });
-}
 });

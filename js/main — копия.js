@@ -1,35 +1,23 @@
+'use strict'
 // animation onscroll
 
-const animeItems = document.querySelectorAll('.animate-item');
+const animeItems = $('.animate-item');
 
 if (animeItems.length > 0) {
+    $(window).on('scroll', function () { 
 
-    window.addEventListener('scroll', onScrollAnim);
-
-    function onScrollAnim() {
-        const animeItems = document.querySelectorAll('.animate-item');
         for (let index = 0; index < animeItems.length; index++) {
             const animeItem = animeItems[index];
             const animeItemsHeight = animeItem.offsetHeight;
             const animeItemsOffset = offset(animeItem).top;
-            const animeStart = 3;
-            const animeStartFooter = 1.1;
+            let animeStart;
 
-            if (animeItem.classList.contains('animate-footer')) {
-                let animeTamePoint = window.innerHeight - animeItemsHeight / animeStartFooter;
-                if (animeItemsHeight > window.innerHeight) {
-                    animeTamePoint = window.innerHeight - window.innerHeight / animeStartFooter;
-                }
-                if ((pageYOffset > animeItemsOffset - animeTamePoint) && pageYOffset < (animeItemsOffset + animeItemsHeight)) {
-                    animeItem.classList.add('active-anim');
-                } else {
-                    if (!animeItem.classList.contains('no-anim')) {
-                        animeItem.classList.remove('active-anim');
-                    }
-                }
-            }
-
-            if (!animeItem.classList.contains('animate-footer')) {
+            if($(animeItem).hasClass('animate-footer')){
+                animeStart = 1.01;
+            } else {
+                animeStart = 4;
+            };
+           
                 let animeTamePoint = window.innerHeight - animeItemsHeight / animeStart;
                 if (animeItemsHeight > window.innerHeight) {
                     animeTamePoint = window.innerHeight - window.innerHeight / animeStart;
@@ -40,11 +28,10 @@ if (animeItems.length > 0) {
                     if (!animeItem.classList.contains('no-anim')) {
                         animeItem.classList.remove('active-anim');
                     }
-                }
-            }
+                } 
         }
-    }
-
+    });
+    
     function offset(el) {
         const rect = el.getBoundingClientRect(),
             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
@@ -54,19 +41,25 @@ if (animeItems.length > 0) {
             left: rect.left + scrollLeft
         }
     }
-    onScrollAnim();
+
+    
+    
 };
 
 //header menu fixed
 
-var div = document.getElementById('header-fix');
-window.onscroll = function () {
+
+$(window).on('scroll', function () { 
+    let div = $('#header-fix');
     if (window.pageYOffset > 95) {
-        div.classList.add('toolbar');
-    } else if (window.pageYOffset < 95) {
-        div.classList.remove('toolbar');
+        div.addClass('toolbar');
     }
-};
+    if (window.pageYOffset < 95 || $('#how-we-clean').hasClass('animate-footer') && $('#how-we-clean').hasClass('active-anim')) {
+        div.removeClass('toolbar');
+    }
+
+});
+
 
 // btn order
 
@@ -90,7 +83,6 @@ $(window).on('scroll', function () {
             function () {
                 $(this).addClass('btn-scale');
             });
-
     };
 
     if (s < 100) {
@@ -100,16 +92,14 @@ $(window).on('scroll', function () {
             });
     }
 
-
     if (s == 0) {
         $('.rotate-icon').css('transform', 'rotate(-15deg)').removeClass('btn-scale');
     }
 
     if ($('#how-we-clean').hasClass('animate-footer') && $('#how-we-clean').hasClass('active-anim')) {
         $('#btn-order-clean').css('transform', 'scale(0)');
-        $('#header-fix').removeClass('toolbar');
-    } else {
-        $('#btn-order-clean').css('transform', 'scale(1)');
-    }
+     } else {
+         $('#btn-order-clean').css('transform', 'scale(1)');
+     }
 
 });
