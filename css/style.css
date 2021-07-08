@@ -491,6 +491,15 @@ main {
   -webkit-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
 }
+#how-we-clean.animate-footer.active-anim .popup-block {
+  display: block;
+}
+#how-we-clean.animate-footer.active-anim .popup-block .popup-item {
+  display: none;
+}
+#how-we-clean.animate-footer.active-anim .popup-block .popup-item.open {
+  display: block;
+}
 #how-we-clean.animate-footer.active-anim .left-navigation {
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
@@ -528,11 +537,9 @@ main {
 }
 
 .popup-block {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 365px;
-}
-.popup-block .popup-item {
   display: none;
 }
 

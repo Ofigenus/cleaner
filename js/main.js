@@ -4,7 +4,7 @@
 const animeItems = $('.animate-item');
 
 if (animeItems.length > 0) {
-    $(window).on('scroll', function () { 
+    $(window).on('scroll', function () {
 
         for (let index = 0; index < animeItems.length; index++) {
             const animeItem = animeItems[index];
@@ -12,26 +12,26 @@ if (animeItems.length > 0) {
             const animeItemsOffset = offset(animeItem).top;
             let animeStart;
 
-            if($(animeItem).hasClass('animate-footer')){
+            if ($(animeItem).hasClass('animate-footer')) {
                 animeStart = 1.01;
             } else {
                 animeStart = 4;
             };
-           
-                let animeTamePoint = window.innerHeight - animeItemsHeight / animeStart;
-                if (animeItemsHeight > window.innerHeight) {
-                    animeTamePoint = window.innerHeight - window.innerHeight / animeStart;
+
+            let animeTamePoint = window.innerHeight - animeItemsHeight / animeStart;
+            if (animeItemsHeight > window.innerHeight) {
+                animeTamePoint = window.innerHeight - window.innerHeight / animeStart;
+            }
+            if ((pageYOffset > animeItemsOffset - animeTamePoint) && pageYOffset < (animeItemsOffset + animeItemsHeight)) {
+                animeItem.classList.add('active-anim');
+            } else {
+                if (!animeItem.classList.contains('no-anim')) {
+                    animeItem.classList.remove('active-anim');
                 }
-                if ((pageYOffset > animeItemsOffset - animeTamePoint) && pageYOffset < (animeItemsOffset + animeItemsHeight)) {
-                    animeItem.classList.add('active-anim');
-                } else {
-                    if (!animeItem.classList.contains('no-anim')) {
-                        animeItem.classList.remove('active-anim');
-                    }
-                } 
+            }
         }
     });
-    
+
     function offset(el) {
         const rect = el.getBoundingClientRect(),
             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
@@ -40,13 +40,13 @@ if (animeItems.length > 0) {
             top: rect.top + scrollTop,
             left: rect.left + scrollLeft
         }
-    } 
+    }
 };
 
 //header menu fixed
 
 
-$(window).on('scroll', function () { 
+$(window).on('scroll', function () {
     let div = $('#header-fix');
     if (window.pageYOffset > 95) {
         div.addClass('toolbar');
@@ -95,20 +95,56 @@ $(window).on('scroll', function () {
 
     if ($('#how-we-clean').hasClass('animate-footer') && $('#how-we-clean').hasClass('active-anim')) {
         $('#btn-order-clean').css('transform', 'scale(0)');
-     } else {
-         $('#btn-order-clean').css('transform', 'scale(1)');
-     }
+    } else {
+        $('#btn-order-clean').css('transform', 'scale(1)');
+    }
+
+});
+
+//animation on hover for plus
+
+$(document).ready(function () {
+    let plusItems = $('.plus-hover');
+    let floor = $('.popup-item');
+
+    for (let i = 0; i < floor.length; i++) {
+
+        let textElement = floor[i];
+        let elen = $(textElement).attr('class').split(/\s+/);
+
+        console.log(elen);
+    }
+
+    for (let i = 0; i < plusItems.length; i++) {
+        let plusElement = plusItems[i];
+
+        $(plusElement).on("click", function () {
+
+            if ($(plusElement).hasClass('i-floor')) {
+                $('.t-floor').toggleClass('open');
+            };
+            if ($(plusElement).hasClass('i-freezer')) {
+                $('.t-freezer').toggleClass('open');
+            };
+            if ($(plusElement).hasClass('i-furniture')) {
+                $('.t-furniture').toggleClass('open');
+            };
+            if ($(plusElement).hasClass('i-stove')) {
+                $('.t-stove').toggleClass('open');
+            };
+            if ($(plusElement).hasClass('i-hood')) {
+                $('.t-hood').toggleClass('open');
+            };
+            if ($(plusElement).hasClass('i-table')) {
+                $('.t-table').toggleClass('open');
+            };
+            if ($(plusElement).hasClass('i-washing')) {
+                $('.t-washing').toggleClass('open');
+            };
+        });
+    }
+
 
 });
 
 
-
-// $('.st3').hover(function () {
-//     let plus = $('.st2');
-//     for (let index = 0; index < plus.length; index++) {
-//         let animePlus = plus[index];
-    
-//         $(animePlus).toggleClass('st2-hover');
-// console.log(animePlus);
-//     }
-// });
