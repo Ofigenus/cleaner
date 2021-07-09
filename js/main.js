@@ -1,4 +1,4 @@
-'use strict'
+
 // animation onscroll
 
 const animeItems = $('.animate-item');
@@ -103,48 +103,76 @@ $(window).on('scroll', function () {
 
 //animation on hover for plus
 
+// $(document).ready(function () {
+//     let plusItems = $('.plus-hover');
+//     let floor = $('.popup-item');
+
+//     for (let i = 0; i < floor.length; i++) {
+
+//         let textElement = floor[i];
+//         let elen = $(textElement).attr('class').split(/\s+/);
+
+//         console.log(elen);
+//     }
+
+//     for (let i = 0; i < plusItems.length; i++) {
+//         let plusElement = plusItems[i];
+
+//         $(plusElement).on("click", function () {
+
+//             if ($(plusElement).hasClass('i-floor')) {
+//                 $('.t-floor').toggleClass('open');
+//             };
+//             if ($(plusElement).hasClass('i-freezer')) {
+//                 $('.t-freezer').toggleClass('open');
+//             };
+//             if ($(plusElement).hasClass('i-furniture')) {
+//                 $('.t-furniture').toggleClass('open');
+//             };
+//             if ($(plusElement).hasClass('i-stove')) {
+//                 $('.t-stove').toggleClass('open');
+//             };
+//             if ($(plusElement).hasClass('i-hood')) {
+//                 $('.t-hood').toggleClass('open');
+//             };
+//             if ($(plusElement).hasClass('i-table')) {
+//                 $('.t-table').toggleClass('open');
+//             };
+//             if ($(plusElement).hasClass('i-washing')) {
+//                 $('.t-washing').toggleClass('open');
+//             };
+//         });
+//     }
+
+// });
+
+// $(document).click(function (e) {
+//     if ( !menuBtn.is(e.target) && !menu.is(e.target) && menu.has(e.target).length === 0) {
+//         menu.slideUp();
+//         menuBtn.removeClass('is-active');
+//     };
+// });
+
+
 $(document).ready(function () {
-    let plusItems = $('.plus-hover');
-    let floor = $('.popup-item');
-
-    for (let i = 0; i < floor.length; i++) {
-
-        let textElement = floor[i];
-        let elen = $(textElement).attr('class').split(/\s+/);
-
-        console.log(elen);
-    }
-
+    var plusItems = $('.plus-hover');
+    var popaps = $('.popup-item');
+  
     for (let i = 0; i < plusItems.length; i++) {
-        let plusElement = plusItems[i];
-
+        var plusElement = plusItems[i];
+        
         $(plusElement).on("click", function () {
+             var plus = $(this).data('plus');
+             
+             for(let i = 0; i < popaps.length; i++) {
+                var popupElement = popaps[i];
+                var popup = $(popupElement).data('popup');
 
-            if ($(plusElement).hasClass('i-floor')) {
-                $('.t-floor').toggleClass('open');
-            };
-            if ($(plusElement).hasClass('i-freezer')) {
-                $('.t-freezer').toggleClass('open');
-            };
-            if ($(plusElement).hasClass('i-furniture')) {
-                $('.t-furniture').toggleClass('open');
-            };
-            if ($(plusElement).hasClass('i-stove')) {
-                $('.t-stove').toggleClass('open');
-            };
-            if ($(plusElement).hasClass('i-hood')) {
-                $('.t-hood').toggleClass('open');
-            };
-            if ($(plusElement).hasClass('i-table')) {
-                $('.t-table').toggleClass('open');
-            };
-            if ($(plusElement).hasClass('i-washing')) {
-                $('.t-washing').toggleClass('open');
-            };
+               
+                if(popup === plus) {
+                    $(popupElement).toggleClass('open');
+                }
+            }
         });
-    }
-
-
+    };
 });
-
-
