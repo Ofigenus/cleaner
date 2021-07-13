@@ -4,7 +4,7 @@
 .container {
     max-width: 1350px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 15px;
 }
 
 .row {
@@ -71,6 +71,14 @@ main {
     z-index: 10;
     padding: 22px 0;
     width: 100%;
+
+    .main-logo-btn, .contacts-container {
+        display: flex;
+    }
+
+    .header-top {
+       justify-content: space-between; 
+    }
 
 }
 
@@ -244,9 +252,14 @@ main {
 //..........Slider............
 
 .main-slider {
+
+    max-width: 1440px;
+    margin: 0 auto;
+
     .room-text {
         max-width: 380px;
         padding-left: 155px;
+        box-sizing: border-box;
 
         p {
             font-size: 18px;
@@ -254,11 +267,17 @@ main {
         }
     }
 
-}
+    .room-img, .room-text  {
+        max-width: 50%;
+        position: relative;
+    }
 
-.main-slider {
-    max-width: 1440px;
-    margin: 0 auto;
+    .room-img {
+        img {
+            width: 100%;
+        }
+    }
+
 }
 
 //..........Advantages............
@@ -510,6 +529,8 @@ main {
         }
 
         .how-we-clean-img {
+            min-height: 630px;
+            position: relative;
             img {
                 max-width: 1094px;
                 margin: 0 auto;
@@ -518,10 +539,15 @@ main {
                 position: absolute;
                 bottom: 0px;
                 left: calc(50% - 1094px / 2);
-                //right: calc(50% - 1094px / 2);
                 transition: all .8s ease 0s;
         
             }
+            .popup-block.popup-kitchen {
+
+                
+            }
+
+            
             
         }
     }
@@ -530,11 +556,35 @@ main {
 
         .popup-block {
             display: block;
+            
             .popup-item {
-                display: none;
+                background-color: #fff;
+                padding: 8px 15px;
+                border-radius: 2px;
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 130%;
+                position: absolute;
+                opacity: 0;
+                display: inline-block;
+                transition: all .2s ease-in-out 0s;
+                &::before {
+                    content: ' ';
+                    width: 10px;
+                    height: 10px;
+                    background: #fff;
+                    transform: rotate(45deg);
+                    bottom: -5px;
+                    display: block;
+                    position: absolute;
+                    left: 35px;
+                } 
+                
                 &.open {
-                    display: block; 
+                    opacity: 1;
+                    z-index: 999999; 
                 }
+
             }
         }
         
@@ -578,6 +628,7 @@ main {
     .plus-hover:hover .st2{
         opacity: 0;
     }
+    
 }
 
 
@@ -586,6 +637,18 @@ main {
     bottom: 0;
     left: 365px;
     display: none;
+    height: 100%;
+    width: 100%;
+    //max-width: 1168px;
+                
+  [data-popup~="k-2"] {
+        top: 35%;
+        left: 45%;
+    }
+}
+
+.st2-off .st2{
+    opacity: 0 !important;
 }
 
 

@@ -37,7 +37,7 @@
 .container {
   max-width: 1350px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .row {
@@ -110,6 +110,16 @@ main {
   z-index: 10;
   padding: 22px 0;
   width: 100%;
+}
+.main-header .main-logo-btn, .main-header .contacts-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.main-header .header-top {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .main-logo {
@@ -254,18 +264,26 @@ main {
   top: 50%;
 }
 
+.main-slider {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 .main-slider .room-text {
   max-width: 380px;
   padding-left: 155px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .main-slider .room-text p {
   font-size: 18px;
   line-height: 140%;
 }
-
-.main-slider {
-  max-width: 1440px;
-  margin: 0 auto;
+.main-slider .room-img, .main-slider .room-text {
+  max-width: 50%;
+  position: relative;
+}
+.main-slider .room-img img {
+  width: 100%;
 }
 
 #advantages .adv-item {
@@ -480,6 +498,10 @@ main {
   line-height: 120%;
   font-weight: normal;
 }
+#how-we-clean #content-how-clean .how-we-clean-img {
+  min-height: 630px;
+  position: relative;
+}
 #how-we-clean #content-how-clean .how-we-clean-img img {
   max-width: 1094px;
   margin: 0 auto;
@@ -495,10 +517,33 @@ main {
   display: block;
 }
 #how-we-clean.animate-footer.active-anim .popup-block .popup-item {
-  display: none;
+  background-color: #fff;
+  padding: 8px 15px;
+  border-radius: 2px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 130%;
+  position: absolute;
+  opacity: 0;
+  display: inline-block;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+#how-we-clean.animate-footer.active-anim .popup-block .popup-item::before {
+  content: " ";
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  bottom: -5px;
+  display: block;
+  position: absolute;
+  left: 35px;
 }
 #how-we-clean.animate-footer.active-anim .popup-block .popup-item.open {
-  display: block;
+  opacity: 1;
+  z-index: 999999;
 }
 #how-we-clean.animate-footer.active-anim .left-navigation {
   -webkit-transform: translate(0px, 0px);
@@ -541,6 +586,16 @@ main {
   bottom: 0;
   left: 365px;
   display: none;
+  height: 100%;
+  width: 100%;
+}
+.popup-block [data-popup~=k-2] {
+  top: 35%;
+  left: 45%;
+}
+
+.st2-off .st2 {
+  opacity: 0 !important;
 }
 
 #btn-order-clean {
