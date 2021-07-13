@@ -501,6 +501,7 @@ main {
 #how-we-clean #content-how-clean .how-we-clean-img {
   min-height: 630px;
   position: relative;
+  overflow: hidden;
 }
 #how-we-clean #content-how-clean .how-we-clean-img img {
   max-width: 1094px;
