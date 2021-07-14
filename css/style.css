@@ -288,6 +288,8 @@ main {
 
 #advantages .adv-item {
   max-width: 300px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 #advantages .adv-item .adv-content {
   position: relative;
@@ -514,6 +516,14 @@ main {
   -webkit-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
 }
+#how-we-clean #content-how-clean .how-we-clean-img .slide {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+#how-we-clean #content-how-clean .how-we-clean-img .slide.active-slide {
+  opacity: 1;
+}
 #how-we-clean.animate-footer.active-anim .popup-block {
   display: block;
 }
@@ -555,7 +565,7 @@ main {
           transform: translate(0px, -200%);
 }
 #how-we-clean.animate-footer.active-anim .how-we-clean-img img {
-  left: 365px !important;
+  left: 245px !important;
   max-width: 100% !important;
   height: 100vh !important;
   position: fixed !important;
@@ -573,12 +583,12 @@ main {
   z-index: 999;
   bottom: 0;
   height: 100%;
-  left: 365px;
+  left: 245px;
 }
 .animate-footer.active-anim .map-interactive .st2-hover {
   opacity: 0;
 }
-.animate-footer.active-anim .map-interactive .plus-hover:hover .st2 {
+.animate-footer.active-anim .map-interactive .plus-hover:hover .st2, .animate-footer.active-anim .map-interactive .plus-hover:hover .st6 {
   opacity: 0;
 }
 
@@ -595,7 +605,7 @@ main {
   left: 45%;
 }
 
-.st2-off .st2 {
+.st2-off .st2, .st2-off .st6 {
   opacity: 0 !important;
 }
 

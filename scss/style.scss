@@ -285,6 +285,8 @@ main {
 #advantages {
     .adv-item {
         max-width: 300px;
+        margin-right: 10px;
+        margin-bottom: 10px;
 
 
         .adv-content {
@@ -543,13 +545,15 @@ main {
                 transition: all .8s ease 0s;
         
             }
-            .popup-block.popup-kitchen {
 
-                
+            .slide {
+                opacity: 0;
+                transition: all .5s ease 0s;
+
+                &.active-slide {
+                    opacity: 1;
+                }
             }
-
-            
-            
         }
     }
 
@@ -601,7 +605,7 @@ main {
         .how-we-clean-img {
             img {
                 //top: 0 !important;
-                left: 365px !important;
+                left: 245px !important;
                 max-width: 100% !important;
                 height: 100vh !important;
                 position: fixed !important;
@@ -621,12 +625,12 @@ main {
     z-index: 999;
     bottom: 0;
     height: 100%;
-    left: 365px;
+    left: 245px;
 
     .st2-hover {
         opacity: 0;
     }
-    .plus-hover:hover .st2{
+    .plus-hover:hover .st2, .plus-hover:hover .st6{
         opacity: 0;
     }
     
@@ -648,7 +652,7 @@ main {
     }
 }
 
-.st2-off .st2{
+.st2-off .st2, .st2-off .st6{
     opacity: 0 !important;
 }
 
