@@ -1,3 +1,21 @@
+@media screen and (max-width: 1490px) {
+  #how-we-clean .left-navigation {
+    width: 275px;
+  }
+
+  #how-we-clean .left-navigation .menu-left .menu-left-item .classic, #how-we-clean .left-navigation .menu-left .menu-left-item .italic {
+    font-size: 30px;
+  }
+
+  #how-we-clean .left-navigation .menu-left .item-active .italic::before {
+    font-size: 24px;
+  }
+
+  #how-we-clean.animate-footer.active-anim #content-how-clean .how-we-clean-img img, .animate-footer.active-anim .map-interactive {
+    left: 145px;
+    width: 100%;
+  }
+}
 @media screen and (max-width: 1379px) {
   .main-menu .main-navigation .main-list {
     margin-left: 0;
@@ -8,9 +26,54 @@
     display: none;
   }
 }
+@media screen and (max-width: 1269px) {
+  .adv-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  #how-we-clean.animate-footer.active-anim #content-how-clean .how-we-clean-img img, .animate-footer.active-anim .map-interactive {
+    left: 0px;
+    width: 100%;
+  }
+}
 @media screen and (max-width: 1129px) {
   .main-slider .room-text {
     padding-left: 35px;
+  }
+}
+@media screen and (max-width: 1099px) {
+  #how-we-clean.animate-footer.active-anim #content-how-clean .how-we-clean-img img, .animate-footer.active-anim .map-interactive {
+    height: auto;
+  }
+}
+@media screen and (max-width: 990px) {
+  #how-we-clean .left-navigation {
+    width: 100%;
+    max-height: 150px;
+  }
+
+  #how-we-clean .left-navigation .header-menu-left p {
+    padding: 35px 0 0 35px;
+  }
+
+  #how-we-clean .left-navigation .menu-left {
+    padding: 15px 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  #how-we-clean .left-navigation .menu-left .item-active .italic::before {
+    display: none;
+  }
+
+  #how-we-clean.animate-footer.active-anim .left-navigation {
+    z-index: 999999999999;
   }
 }
 @media screen and (max-width: 799px) {
@@ -38,6 +101,18 @@
   .slider-btn {
     display: none;
   }
+
+  #advantages .adv-item .adv-content .adv-title {
+    font-size: 18px;
+  }
+
+  #advantages .adv-item .adv-content {
+    min-height: 250px;
+  }
+
+  #how-we-clean {
+    display: none;
+  }
 }
 @media screen and (max-width: 505px) {
   .main-slider .room-img img {
@@ -49,7 +124,7 @@
     display: none;
   }
 
-  .main-slider .room-text {
+  .main-slider .room-text, #how-we-clean #content-how-clean .head-text {
     padding-left: 15px;
     padding-right: 15px;
   }

@@ -564,11 +564,12 @@ main {
   -webkit-transform: translate(0px, -200%);
           transform: translate(0px, -200%);
 }
-#how-we-clean.animate-footer.active-anim .how-we-clean-img img {
-  left: 245px !important;
-  max-width: 100% !important;
-  height: 100vh !important;
-  position: fixed !important;
+
+#how-we-clean.animate-footer.active-anim #content-how-clean .how-we-clean-img img {
+  left: 245px;
+  max-width: 100%;
+  height: 100vh;
+  position: fixed;
 }
 
 .map-interactive {

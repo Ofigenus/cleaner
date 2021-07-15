@@ -127,23 +127,35 @@ $(document).ready(function () {
                     $(popupElement).css('top', posX).css('left', posY);
                     $(el).toggleClass('st2-off');
                 }
+                if (popup !== plus) {
+                    $(popupElement).removeClass('open'); 
+                }
             }  
         });
     };
+
+    $(document).mouseup(function (e){ // событие клика по веб-документу
+        var div = $(popaps); // тут указываем ID элемента
+        if (!div.is(e.target) // если клик был не по нашему блоку
+            && div.has(e.target).length === 0) { // и не по его дочерним элементам
+            div.removeClass('open'); // скрываем его
+            }
+        
+    });
 });
 
-//animation footer
+//animation slide
 
 $(document).ready(function() {
 
-
+    var popaps = $('.popup-item');
       $("ul.menu-left").on("click", "li:not(.active)", function() {
-        event.preventDefault();
-        var fdf = this;  
+        event.preventDefault(); 
+        $(popaps).removeClass('open');
         $(this).addClass("item-active").siblings().removeClass("item-active");
         
         var el = $('.item-active > a').data('id');
-        var image = $('.slide');
+
         $(".slide").removeClass("active-slide");
         $('.slide[data-img=' + el + ']').addClass('active-slide');
         });  
